@@ -121,14 +121,14 @@ class DLinkedList:
 
 
                 
-dll = DLinkedList()
-dll.append(1)
-dll.append(2)
-dll.append(3)
+# dll = DLinkedList()
+# dll.append(1)
+# dll.append(2)
+# dll.append(3)
 
-dll.insertPosition(3,'X')
-dll.reverseList()
-dll.traverse()
+# dll.insertPosition(3,'X')
+# dll.reverseList()
+# dll.traverse()
 
 
 

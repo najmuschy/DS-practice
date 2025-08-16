@@ -18,13 +18,14 @@ class LinkedList:
         while last.next:
             last = last.next
         last.next = new_node
+        return last.next
 
     def traverse(self):
         current = self.head
         while current:
             print(current.data, end='->')
             current = current.next
-        print("None")
+        print(current)
 
     def insertBeginning(self, data):
         temp_node = self.head
@@ -54,3 +55,11 @@ class LinkedList:
             new_node.next = temp.next
             temp.next = new_node
 
+# ll = LinkedList()
+
+# ll.append(1)
+# ll.append(1)
+# ll.append(1)
+# ll.append(1)
+
+# ll.traverse()
