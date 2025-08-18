@@ -13,3 +13,6 @@ def remove_dupli(list):
 remove_dupli(list)
 
 print(list)
+
+#bruteforce - append all the non zero into a different array, take a count for every zero on the first pass and
+#then append all the zeroes at the end of the first loop
