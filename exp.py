@@ -1,29 +1,45 @@
+def unionArray(nums1, nums2):
+    size1 =len(nums1)
+    size2 = len(nums2)
+    i=0
+    j=0
+    result = []
+    last= 0
+    while i<size1 and j<size2 :
 
-def subarraySum( nums:list, k: int) -> int:
-    prefixSum = dict()
-    sum=0
-    len=0
-    total = 0
-    newLen = 0
-    for idx, number in enumerate(nums):
-        sum = sum+number
-        if(sum==k):
-            len = idx+1
-            total+=1
-        rem = sum -k 
-        if rem in prefixSum:
-            newLen = idx-prefixSum[rem]
-            total+=1
-        if sum not in prefixSum:
-            prefixSum[rem] = idx
-        if newLen>len:
-            len = newLen            
-    return total
+        if nums1[i]<=nums2[j] :
+            if nums1[i]!=last:
+                last = nums1[i]
+                result.append(nums1[i])
+                i+=1
+            else:
+                i+=1
+        elif nums2[j]<nums1[i] :
+            if nums2[j]!=last:
+                last = nums2[j]
+                result.append(nums2[j])
+                j+=1
+            else:
+                j+=1
     
+    if i==len(nums1):
+        while j!=len(nums2):
+            if nums2[j]!=last:
+                result.append(nums2[j])
+                j+=1
+            else:
+                j+=1
 
+    if j==len(nums2):
+        while i!=len(nums1):
+            if nums1[i]!=last:
+                result.append(nums1[i])
+                i+=1
+            else:
+                i+=1               
+    return result
 
-list = [1,2,3]
+nums1 = [3, 4, 6, 7, 9, 9]
+nums2 = [1, 5, 7, 8, 8]
 
-result = subarraySum(list,3)
-
-print(result)
+print(unionArray(nums1, nums2))

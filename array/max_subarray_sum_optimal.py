@@ -5,7 +5,8 @@ def subarray_list(list1,k):
     maxlen = 0
     sum= 0
     while right< len(list1):
-        if right< len(list1): sum+=list[right]
+        if right< len(list1): 
+            sum+=list[right]
 
         while left<=right and sum>k:
             sum = sum-list[left]
