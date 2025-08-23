@@ -1,6 +1,7 @@
 def time_to_buy(nums):
     
-    mini, profit = nums[0], 0
+    mini= nums[0]
+    profit = 0
 
     for i in range(1, len(nums)):   
         cost = nums[i]-mini
